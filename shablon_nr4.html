@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEXPRO — Юридична компанія</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+
+      --bg:#0d1117;
+      --bg2:#111827;
+      --bg3:#0f1722;
+
+      --card:#151c28;
+      --card2:#1a2332;
+      --card3:#101722;
+
+      --text:#f3f4f6;
+      --gray:#aeb7c3;
+
+      --green:#4ade80;
+      --green-soft:#2f6f52;
+
+      --gold:#d6b37a;
+      --gold-soft:#6f5b3b;
+
+      --blue:#60a5fa;
+      --blue-soft:#284c73;
+
+      --line:rgba(255,255,255,0.06);
+
+      --shadow:
+      0 25px 60px rgba(0,0,0,0.45);
+
+    }
+
+    body{
+
+      font-family:'Space Grotesk', sans-serif;
+
+      background:
+
+      radial-gradient(
+      circle at top left,
+      rgba(74,222,128,0.08),
+      transparent 24%),
+
+      radial-gradient(
+      circle at bottom right,
+      rgba(96,165,250,0.10),
+      transparent 28%),
+
+      radial-gradient(
+      circle at top right,
+      rgba(214,179,122,0.08),
+      transparent 20%),
+
+      linear-gradient(
+      180deg,
+      var(--bg),
+      var(--bg2),
+      var(--bg3));
+
+      color:var(--text);
+
+      overflow-x:hidden;
+    }
+
+    .container{
+      width:92%;
+      max-width:1320px;
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      padding:28px 0;
+    }
+
+    .header-wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:30px;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+
+    .logo span{
+      color:var(--green);
+    }
+
+    .nav{
+      display:flex;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    .nav a:hover{
+      color:var(--green);
+    }
+
+    /* MAIN GRID */
+
+    .main-layout{
+
+      display:grid;
+
+      grid-template-columns:
+      320px
+      1fr
+      320px;
+
+      gap:24px;
+
+      align-items:start;
+
+      margin-top:20px;
+    }
+
+    /* SIDEBARS */
+
+    .sidebar,
+    .right-panel{
+
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+
+      position:sticky;
+      top:20px;
+    }
+
+    .sidebar-card{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(21,28,40,0.96),
+      rgba(16,23,34,0.92));
+
+      border:1px solid var(--line);
+
+      border-radius:30px;
+
+      padding:28px;
+
+      box-shadow:var(--shadow);
+
+      backdrop-filter:blur(12px);
+    }
+
+    .sidebar-card h3{
+      font-size:22px;
+      margin-bottom:16px;
+    }
+
+    .sidebar-card p{
+      color:var(--gray);
+      line-height:1.7;
+      margin-bottom:18px;
+    }
+
+    .sidebar-card ul{
+      list-style:none;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .sidebar-card li{
+
+      padding:14px;
+
+      border-radius:18px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      font-size:15px;
+    }
+
+    /* CONTENT */
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    /* HERO */
+
+    .hero{
+
+      background:
+      linear-gradient(
+      135deg,
+      rgba(17,24,39,0.95),
+      rgba(10,15,24,0.98));
+
+      border:1px solid var(--line);
+
+      border-radius:40px;
+
+      padding:60px;
+
+      overflow:hidden;
+
+      position:relative;
+
+      box-shadow:var(--shadow);
+    }
+
+    .hero::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:450px;
+      height:450px;
+
+      border-radius:50%;
+
+      background:
+      radial-gradient(circle,
+      rgba(96,165,250,0.20),
+      transparent 65%);
+
+      right:-180px;
+      top:-160px;
+    }
+
+    .badge{
+
+      display:inline-block;
+
+      padding:10px 18px;
+
+      border-radius:999px;
+
+      background:rgba(74,222,128,0.10);
+
+      color:var(--green);
+
+      font-size:14px;
+      font-weight:700;
+
+      margin-bottom:24px;
+    }
+
+    .hero h1{
+
+      font-size:78px;
+
+      line-height:0.95;
+
+      letter-spacing:-3px;
+
+      max-width:850px;
+
+      margin-bottom:24px;
+    }
+
+    .hero h1 span{
+      color:var(--gold);
+    }
+
+    .hero p{
+
+      color:var(--gray);
+
+      font-size:18px;
+
+      line-height:1.9;
+
+      max-width:720px;
+
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+
+    .btn{
+
+      text-decoration:none;
+
+      padding:16px 24px;
+
+      border-radius:18px;
+
+      font-weight:700;
+
+      transition:0.3s;
+    }
+
+    .btn-main{
+
+      background:
+      linear-gradient(
+      135deg,
+      var(--green),
+      #2fb36b);
+
+      color:#08110c;
+    }
+
+    .btn-main:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-light{
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      color:var(--text);
+    }
+
+    .btn-light:hover{
+      background:rgba(255,255,255,0.08);
+    }
+
+    /* STATS */
+
+    .stats{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(3,1fr);
+
+      gap:18px;
+
+      margin-top:40px;
+    }
+
+    .stat{
+
+      padding:22px;
+
+      border-radius:24px;
+
+      background:rgba(255,255,255,0.03);
+
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .stat h2{
+
+      color:var(--gold);
+
+      font-size:42px;
+
+      margin-bottom:10px;
+    }
+
+    .stat p{
+      color:var(--gray);
+      line-height:1.6;
+    }
+
+    /* SERVICES */
+
+    .services-grid{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(2,1fr);
+
+      gap:22px;
+    }
+
+    .service{
+
+      border-radius:34px;
+
+      padding:34px;
+
+      min-height:260px;
+
+      position:relative;
+
+      overflow:hidden;
+
+      box-shadow:var(--shadow);
+
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .service:nth-child(1){
+      background:
+      linear-gradient(
+      135deg,
+      #1d2a22,
+      #141b18);
+    }
+
+    .service:nth-child(2){
+      background:
+      linear-gradient(
+      135deg,
+      #1d2430,
+      #121821);
+    }
+
+    .service:nth-child(3){
+      background:
+      linear-gradient(
+      135deg,
+      #2b241d,
+      #17130f);
+    }
+
+    .service:nth-child(4){
+      background:
+      linear-gradient(
+      135deg,
+      #1f1d2b,
+      #13121a);
+    }
+
+    .service h2{
+
+      font-size:32px;
+
+      margin-bottom:18px;
+    }
+
+    .service p{
+
+      color:var(--gray);
+
+      line-height:1.8;
+
+      max-width:400px;
+    }
+
+    .service-number{
+
+      position:absolute;
+
+      right:24px;
+      bottom:18px;
+
+      font-size:72px;
+
+      font-weight:700;
+
+      opacity:0.08;
+    }
+
+    /* CONTACTS */
+
+    .contact-card{
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(21,28,40,0.98),
+      rgba(14,19,29,0.96));
+
+      border:1px solid var(--line);
+
+      border-radius:32px;
+
+      padding:28px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .contact-card h3{
+
+      font-size:24px;
+
+      margin-bottom:20px;
+    }
+
+    .contact-item{
+
+      padding:16px;
+
+      border-radius:18px;
+
+      background:rgba(255,255,255,0.03);
+
+      margin-bottom:14px;
+
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-item span{
+
+      display:block;
+
+      font-size:13px;
+
+      color:var(--gray);
+
+      margin-bottom:6px;
+    }
+
+    .contact-item a{
+
+      text-decoration:none;
+
+      color:var(--text);
+
+      font-weight:700;
+    }
+
+    .contact-item a:hover{
+      color:var(--green);
+    }
+
+    /* SOCIALS */
+
+    .socials{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(2,1fr);
+
+      gap:12px;
+    }
+
+    .socials a{
+
+      text-decoration:none;
+
+      padding:16px;
+
+      border-radius:18px;
+
+      background:#141c28;
+
+      border:1px solid rgba(255,255,255,0.05);
+
+      text-align:center;
+
+      color:var(--text);
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+
+      background:var(--green);
+
+      color:#08110c;
+    }
+
+    /* QUOTE */
+
+    .quote{
+
+      background:
+      linear-gradient(
+      135deg,
+      #131d1a,
+      #161d29);
+
+      border:1px solid var(--line);
+
+      border-radius:36px;
+
+      padding:50px;
+
+      text-align:center;
+
+      box-shadow:var(--shadow);
+    }
+
+    .quote h2{
+
+      font-size:48px;
+
+      line-height:1.2;
+
+      margin-bottom:18px;
+    }
+
+    .quote p{
+
+      color:var(--gray);
+
+      max-width:700px;
+
+      margin:auto;
+
+      line-height:1.8;
+    }
+
+    footer{
+
+      padding:60px 0;
+
+      text-align:center;
+
+      color:var(--gray);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:1200px){
+
+      .main-layout{
+
+        grid-template-columns:1fr;
+      }
+
+      .sidebar,
+      .right-panel{
+
+        position:relative;
+        top:0;
+      }
+    }
+
+    @media(max-width:850px){
+
+      .hero{
+        padding:36px;
+      }
+
+      .hero h1{
+
+        font-size:48px;
+
+        letter-spacing:-2px;
+      }
+
+      .services-grid{
+
+        grid-template-columns:1fr;
+      }
+
+      .stats{
+
+        grid-template-columns:1fr;
+      }
+
+      .nav{
+        display:none;
+      }
+
+      .socials{
+
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="container">
+
+      <div class="header-wrap">
+
+        <div class="logo">
+          LEX<span>PRO</span>
+        </div>
+
+        <nav class="nav">
+          <a href="#">Послуги</a>
+          <a href="#">Підтримка</a>
+          <a href="#">Контакти</a>
+          <a href="#">Telegram</a>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <div class="main-layout">
+
+      <!-- LEFT SIDEBAR -->
+
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+
+          <h3>
+            Як ми працюємо
+          </h3>
+
+          <p>
+            Сучасний юридичний сервіс
+            без перевантаження та
+            складної навігації.
+          </p>
+
+          <ul>
+
+            <li>
+              Консультація
+            </li>
+
+            <li>
+              Аналіз ситуації
+            </li>
+
+            <li>
+              Підготовка документів
+            </li>
+
+            <li>
+              Повний супровід
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="sidebar-card">
+
+          <h3>
+            Telegram підтримка
+          </h3>
+
+          <p>
+            Напишіть нам напряму
+            через Telegram-бота.
+          </p>
+
+          <a class="btn btn-main"
+             href="https://t.me/example_support_bot"
+             target="_blank">
+
+             Відкрити Telegram
+
+          </a>
+
+        </div>
+
+      </aside>
+
+      <!-- CENTER -->
+
+      <section class="content">
+
+        <div class="hero">
+
+          <div class="badge">
+            ● професійна юридична підтримка
+          </div>
+
+          <h1>
+            Право.
+            Захист.
+            <span>Результат.</span>
+          </h1>
+
+          <p>
+            Допомагаємо бізнесу та
+            приватним клієнтам
+            у складних правових питаннях.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="tel:+380991112233"
+               class="btn btn-main">
+
+               Подзвонити
+
+            </a>
+
+            <a href="#"
+               class="btn btn-light">
+
+               Дізнатись більше
+
+            </a>
+
+          </div>
+
+          <div class="stats">
+
+            <div class="stat">
+
+              <h2>
+                10+
+              </h2>
+
+              <p>
+                років досвіду
+              </p>
+
+            </div>
+
+            <div class="stat">
+
+              <h2>
+                500+
+              </h2>
+
+              <p>
+                задоволених клієнтів
+              </p>
+
+            </div>
+
+            <div class="stat">
+
+              <h2>
+                95%
+              </h2>
+
+              <p>
+                успішних справ
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SERVICES -->
+
+        <div class="services-grid">
+
+          <div class="service">
+
+            <h2>
+              Бізнес
+            </h2>
+
+            <p>
+              Супровід компаній,
+              договорів та корпоративне право.
+            </p>
+
+            <div class="service-number">
+              01
+            </div>
+
+          </div>
+
+          <div class="service">
+
+            <h2>
+              Судові спори
+            </h2>
+
+            <p>
+              Представництво інтересів
+              у судах усіх інстанцій.
+            </p>
+
+            <div class="service-number">
+              02
+            </div>
+
+          </div>
+
+          <div class="service">
+
+            <h2>
+              Нерухомість
+            </h2>
+
+            <p>
+              Перевірка об’єктів,
+              документів та супровід угод.
+            </p>
+
+            <div class="service-number">
+              03
+            </div>
+
+          </div>
+
+          <div class="service">
+
+            <h2>
+              Сімейне право
+            </h2>
+
+            <p>
+              Розлучення,
+              аліменти та поділ майна.
+            </p>
+
+            <div class="service-number">
+              04
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- QUOTE -->
+
+        <div class="quote">
+
+          <h2>
+            Ваш результат —
+            наш пріоритет
+          </h2>
+
+          <p>
+            Поєднуємо досвід,
+            стратегію та індивідуальний підхід
+            для кожного клієнта.
+          </p>
+
+        </div>
+
+      </section>
+
+      <!-- RIGHT SIDEBAR -->
+
+      <aside class="right-panel">
+
+        <div class="contact-card">
+
+          <h3>
+            Контакти
+          </h3>
+
+          <div class="contact-item">
+
+            <span>
+              Основний номер
+            </span>
+
+            <a href="tel:+380501234567">
+              +380 50 123 45 67
+            </a>
+
+          </div>
+
+          <div class="contact-item">
+
+            <span>
+              Додатковий номер
+            </span>
+
+            <a href="tel:+380671234567">
+              +380 67 123 45 67
+            </a>
+
+          </div>
+
+          <div class="contact-item">
+
+            <span>
+              Telegram бот
+            </span>
+
+            <a href="https://t.me/example_support_bot"
+               target="_blank">
+
+               @example_support_bot
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="contact-card">
+
+          <h3>
+            Соцмережі
+          </h3>
+
+          <div class="socials">
+
+            <a href="https://instagram.com/" target="_blank">
+              Instagram
+            </a>
+
+            <a href="https://facebook.com/" target="_blank">
+              Facebook
+            </a>
+
+            <a href="https://linkedin.com/" target="_blank">
+              LinkedIn
+            </a>
+
+            <a href="https://t.me/example_support_bot" target="_blank">
+              Telegram
+            </a>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    © 2026 LEXPRO — усі права захищені
+
+  </footer>
+
+</body>
+</html>
