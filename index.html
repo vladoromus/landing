@@ -702,6 +702,172 @@
         font-size: 34px;
       }
     }
+
+    /* ADD TO CSS */
+
+    .map-floating-btn {
+
+      position: fixed;
+
+      right: 24px;
+
+      bottom: 24px;
+
+      width: 64px;
+
+      height: 64px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(135deg,
+          #4ade80,
+          #2fb36b);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 28px;
+
+      cursor: pointer;
+
+      z-index: 9999;
+
+      box-shadow:
+        0 10px 35px rgba(74, 222, 128, 0.35);
+
+      transition: 0.3s ease;
+
+      animation:
+        floatMap 3s ease-in-out infinite;
+    }
+
+    .map-floating-btn:hover {
+
+      transform:
+        scale(1.08);
+    }
+
+    @keyframes floatMap {
+
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* PANEL */
+
+    .map-panel {
+
+      position: fixed;
+
+      right: -380px;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 320px;
+
+      background:
+        linear-gradient(180deg,
+          rgba(21, 28, 40, 0.98),
+          rgba(14, 19, 29, 0.96));
+
+      border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+      border-radius: 28px;
+
+      padding: 24px;
+
+      z-index: 9998;
+
+      box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45);
+
+      transition: 0.4s ease;
+    }
+
+    .map-panel.active {
+
+      right: 24px;
+    }
+
+    .map-panel-header {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 22px;
+    }
+
+    .map-panel-header h3 {
+
+      font-size: 24px;
+    }
+
+    .map-panel-header button {
+
+      background: transparent;
+
+      border: none;
+
+      color: white;
+
+      font-size: 22px;
+
+      cursor: pointer;
+    }
+
+    .office-link {
+
+      display: block;
+
+      text-decoration: none;
+
+      color: white;
+
+      padding: 18px;
+
+      border-radius: 18px;
+
+      margin-bottom: 14px;
+
+      background:
+        rgba(255, 255, 255, 0.04);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+      transition: 0.3s ease;
+    }
+
+    .office-link:hover {
+
+      background:
+        rgba(74, 222, 128, 0.12);
+
+      border-color:
+        rgba(74, 222, 128, 0.25);
+
+      transform:
+        translateX(4px);
+    }
   </style>
 </head>
 
@@ -746,6 +912,61 @@
   </header>
 
   <main class="container">
+    <!-- ADD BEFORE </body> -->
+
+    <!-- FLOATING MAP BUTTON -->
+
+    <div class="map-floating-btn" onclick="toggleMapPanel()">
+
+      📍
+
+    </div>
+
+    <!-- MAP PANEL -->
+
+    <div class="map-panel" id="mapPanel">
+
+      <div class="map-panel-header">
+
+        <h3>
+          Наші офіси
+        </h3>
+
+        <button onclick="toggleMapPanel()">
+          ✕
+        </button>
+
+      </div>
+
+      <a href="https://maps.google.com/?q=вул. Львівська 169А м. Городок" target="_blank" class="office-link">
+
+        м. Городок (митний пост Городок)
+        вул. Львівська 169А
+        Україна Львівська область
+
+      </a>
+
+      <a href="https://maps.google.com/?q=37-732 Medyka 204 Podkarpackie Polska" target="_blank" class="office-link">
+
+        37-732 Medyka 204
+        Podkarpackie Polska
+
+      </a>
+
+    </div>
+
+    <script>
+
+      function toggleMapPanel() {
+
+        document
+          .getElementById("mapPanel")
+          .classList
+          .toggle("active");
+
+      }
+
+    </script>
 
     <div class="main-layout">
 
@@ -1040,45 +1261,37 @@
             Соцмережі
           </h3>
 
-          <div class="contact-card">
+          <div class="socials">
 
-            <h3>
-              Соцмережі
-            </h3>
+            <a href="https://instagram.com/" target="_blank">
 
-            <div class="socials">
+              Instagram
 
-              <a href="https://instagram.com/" target="_blank">
+            </a>
 
-                Instagram
+            <a href="https://facebook.com/" target="_blank">
 
-              </a>
+              Facebook
 
-              <a href="https://facebook.com/" target="_blank">
+            </a>
 
-                Facebook
+            <a href="https://tiktok.com/" target="_blank">
 
-              </a>
+              TikTok
 
-              <a href="https://tiktok.com/" target="_blank">
+            </a>
 
-                TikTok
+            <a href="https://wa.me/48537547147" target="_blank">
 
-              </a>
+              WhatsApp
 
-              <a href="https://wa.me/48537547147" target="_blank">
+            </a>
 
-                WhatsApp
+            <a href="https://t.me/customs_law_bot" target="_blank">
 
-              </a>
+              Telegram
 
-              <a href="https://t.me/customs_law_bot" target="_blank">
-
-                Telegram
-
-              </a>
-
-            </div>
+            </a>
 
           </div>
 
