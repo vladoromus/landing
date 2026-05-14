@@ -2,13 +2,15 @@
 <html lang="uk">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CustomsToday — Юридична компанія</title>
-  <link rel="icon" type="image/jpg" href="avatar_1.jpg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>CustomsToday — Юридична компанія</title>
+
+  <link rel="icon" type="image/png" href="images/avatar_1.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     * {
@@ -23,27 +25,20 @@
       --bg2: #111827;
       --bg3: #0f1722;
 
-      --card: #151c28;
-      --card2: #1a2332;
-      --card3: #101722;
-
       --text: #f3f4f6;
       --gray: #aeb7c3;
 
       --green: #4ade80;
-      --green-soft: #2f6f52;
-
       --gold: #d6b37a;
-      --gold-soft: #6f5b3b;
-
-      --blue: #60a5fa;
-      --blue-soft: #284c73;
 
       --line: rgba(255, 255, 255, 0.06);
 
       --shadow:
         0 25px 60px rgba(0, 0, 0, 0.45);
+    }
 
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -80,23 +75,50 @@
       margin: auto;
     }
 
+    #services,
+    #support,
+    #contacts,
+    #telegram {
+      scroll-margin-top: 120px;
+    }
+
     /* HEADER */
 
     header {
+
       padding: 28px 0;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      backdrop-filter: blur(10px);
+
+      background:
+        rgba(13, 17, 23, 0.75);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.04);
     }
 
     .header-wrap {
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       gap: 20px;
     }
 
     .logo {
+
       font-size: 30px;
+
       font-weight: 700;
-      letter-spacing: 1px;
     }
 
     .logo span {
@@ -104,15 +126,22 @@
     }
 
     .nav {
+
       display: flex;
+
       gap: 30px;
+
       flex-wrap: wrap;
     }
 
     .nav a {
+
       text-decoration: none;
+
       color: var(--text);
+
       font-weight: 500;
+
       transition: 0.3s;
     }
 
@@ -120,7 +149,7 @@
       color: var(--green);
     }
 
-    /* MAIN GRID */
+    /* MAIN */
 
     .main-layout {
 
@@ -142,11 +171,14 @@
     .right-panel {
 
       display: flex;
+
       flex-direction: column;
+
       gap: 24px;
 
       position: sticky;
-      top: 20px;
+
+      top: 110px;
     }
 
     .sidebar-card {
@@ -163,25 +195,32 @@
       padding: 28px;
 
       box-shadow: var(--shadow);
-
-      backdrop-filter: blur(12px);
     }
 
     .sidebar-card h3 {
+
       font-size: 22px;
+
       margin-bottom: 16px;
     }
 
     .sidebar-card p {
+
       color: var(--gray);
+
       line-height: 1.7;
+
       margin-bottom: 18px;
     }
 
     .sidebar-card ul {
+
       list-style: none;
+
       display: flex;
+
       flex-direction: column;
+
       gap: 12px;
     }
 
@@ -191,18 +230,21 @@
 
       border-radius: 18px;
 
-      background: rgba(255, 255, 255, 0.03);
+      background:
+        rgba(255, 255, 255, 0.03);
 
-      border: 1px solid rgba(255, 255, 255, 0.05);
-
-      font-size: 15px;
+      border:
+        1px solid rgba(255, 255, 255, 0.05);
     }
 
     /* CONTENT */
 
     .content {
+
       display: flex;
+
       flex-direction: column;
+
       gap: 24px;
     }
 
@@ -228,26 +270,6 @@
       box-shadow: var(--shadow);
     }
 
-    .hero::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 450px;
-      height: 450px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(circle,
-          rgba(96, 165, 250, 0.20),
-          transparent 65%);
-
-      right: -180px;
-      top: -160px;
-    }
-
     .badge {
 
       display: inline-block;
@@ -256,11 +278,13 @@
 
       border-radius: 999px;
 
-      background: rgba(74, 222, 128, 0.10);
+      background:
+        rgba(74, 222, 128, 0.10);
 
       color: var(--green);
 
       font-size: 14px;
+
       font-weight: 700;
 
       margin-bottom: 24px;
@@ -268,13 +292,11 @@
 
     .hero h1 {
 
-      font-size: 78px;
+      font-size: clamp(42px, 8vw, 78px);
 
       line-height: 0.95;
 
       letter-spacing: -3px;
-
-      max-width: 850px;
 
       margin-bottom: 24px;
     }
@@ -291,19 +313,25 @@
 
       line-height: 1.9;
 
-      max-width: 720px;
-
       margin-bottom: 35px;
     }
 
     .hero-buttons {
 
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 16px;
     }
 
     .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
 
       text-decoration: none;
 
@@ -327,20 +355,20 @@
     }
 
     .btn-main:hover {
-      transform: translateY(-3px);
+
+      transform:
+        translateY(-4px);
     }
 
     .btn-light {
 
-      background: rgba(255, 255, 255, 0.04);
+      background:
+        rgba(255, 255, 255, 0.04);
 
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
 
       color: var(--text);
-    }
-
-    .btn-light:hover {
-      background: rgba(255, 255, 255, 0.08);
     }
 
     /* STATS */
@@ -363,9 +391,11 @@
 
       border-radius: 24px;
 
-      background: rgba(255, 255, 255, 0.03);
+      background:
+        rgba(255, 255, 255, 0.03);
 
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border:
+        1px solid rgba(255, 255, 255, 0.05);
     }
 
     .stat h2 {
@@ -379,7 +409,6 @@
 
     .stat p {
       color: var(--gray);
-      line-height: 1.6;
     }
 
     /* SERVICES */
@@ -400,7 +429,7 @@
 
       padding: 34px;
 
-      min-height: 260px;
+      min-height: 280px;
 
       position: relative;
 
@@ -408,7 +437,19 @@
 
       box-shadow: var(--shadow);
 
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+      transition: 0.35s ease;
+    }
+
+    .service:hover {
+
+      transform:
+        translateY(-6px);
+
+      border-color:
+        rgba(74, 222, 128, 0.25);
     }
 
     .service:nth-child(1) {
@@ -451,8 +492,6 @@
       color: var(--gray);
 
       line-height: 1.8;
-
-      max-width: 400px;
     }
 
     .service-number {
@@ -460,6 +499,7 @@
       position: absolute;
 
       right: 24px;
+
       bottom: 18px;
 
       font-size: 72px;
@@ -500,11 +540,13 @@
 
       border-radius: 18px;
 
-      background: rgba(255, 255, 255, 0.03);
+      background:
+        rgba(255, 255, 255, 0.03);
 
       margin-bottom: 14px;
 
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border:
+        1px solid rgba(255, 255, 255, 0.05);
     }
 
     .contact-item span {
@@ -553,7 +595,8 @@
 
       background: #141c28;
 
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border:
+        1px solid rgba(255, 255, 255, 0.05);
 
       text-align: center;
 
@@ -604,10 +647,6 @@
 
       color: var(--gray);
 
-      max-width: 700px;
-
-      margin: auto;
-
       line-height: 1.8;
     }
 
@@ -625,7 +664,6 @@
     @media(max-width:1200px) {
 
       .main-layout {
-
         grid-template-columns: 1fr;
       }
 
@@ -633,6 +671,7 @@
       .right-panel {
 
         position: relative;
+
         top: 0;
       }
     }
@@ -643,20 +682,11 @@
         padding: 36px;
       }
 
-      .hero h1 {
-
-        font-size: 48px;
-
-        letter-spacing: -2px;
-      }
-
       .services-grid {
-
         grid-template-columns: 1fr;
       }
 
       .stats {
-
         grid-template-columns: 1fr;
       }
 
@@ -665,14 +695,19 @@
       }
 
       .socials {
-
         grid-template-columns: 1fr;
+      }
+
+      .quote h2 {
+        font-size: 34px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header>
 
@@ -685,10 +720,23 @@
         </div>
 
         <nav class="nav">
-          <a href="#">Послуги</a>
-          <a href="#">Підтримка</a>
-          <a href="#">Контакти</a>
-          <a href="#">Telegram</a>
+
+          <a href="#services">
+            Послуги
+          </a>
+
+          <a href="#support">
+            Підтримка
+          </a>
+
+          <a href="#contacts">
+            Контакти
+          </a>
+
+          <a href="#telegram">
+            Telegram
+          </a>
+
         </nav>
 
       </div>
@@ -701,7 +749,7 @@
 
     <div class="main-layout">
 
-      <!-- LEFT SIDEBAR -->
+      <!-- LEFT -->
 
       <aside class="sidebar">
 
@@ -713,33 +761,25 @@
 
           <p>
             Сучасний юридичний сервіс
-            без перевантаження та
-            складної навігації.
+            без складної бюрократії
+            та перевантажених процесів.
           </p>
 
           <ul>
 
-            <li>
-              Консультація
-            </li>
+            <li>Консультація</li>
 
-            <li>
-              Аналіз ситуації
-            </li>
+            <li>Аналіз ситуації</li>
 
-            <li>
-              Підготовка документів
-            </li>
+            <li>Підготовка документів</li>
 
-            <li>
-              Повний супровід
-            </li>
+            <li>Повний юридичний супровід</li>
 
           </ul>
 
         </div>
 
-        <div class="sidebar-card">
+        <div class="sidebar-card" id="telegram">
 
           <h3>
             Telegram підтримка
@@ -777,19 +817,10 @@
           </h1>
 
           <p>
-            Адвокатський офіс спеціалізується на митному праві та міжнародному представництві інтересів клієнтів в
-            Україні та країнах Європейського Союзу.
-
-            Ми надаємо професійну юридичну допомогу у справах, пов’язаних з митним оформленням, коригуванням митної
-            вартості, конфіскацією товарів, оскарженням рішень митних органів та супроводом міжнародних перевезень.
-
-            Компанія забезпечує правовий захист бізнесу та приватних осіб у складних митних спорах, представляє інтереси
-            клієнтів у державних органах та судах.
-
-            Наш офіс і представництво розташовані поблизу міжнародного пункту пропуску Шегині–Медика, що дозволяє
-            оперативно реагувати на ситуації, пов’язані з митним контролем та перетином кордону.
-
-            Працюємо по всій території України та Європейського Союзу.
+            Адвокатський офіс спеціалізується
+            на митному праві та міжнародному
+            представництві інтересів клієнтів
+            в Україні та країнах Європейського Союзу.
           </p>
 
           <div class="hero-buttons">
@@ -800,7 +831,7 @@
 
             </a>
 
-            <a href="#" class="btn btn-light">
+            <a href="#services" class="btn btn-light">
 
               Дізнатись більше
 
@@ -812,9 +843,7 @@
 
             <div class="stat">
 
-              <h2>
-                15+
-              </h2>
+              <h2>15+</h2>
 
               <p>
                 років досвіду
@@ -824,9 +853,7 @@
 
             <div class="stat">
 
-              <h2>
-                200+
-              </h2>
+              <h2>200+</h2>
 
               <p>
                 задоволених клієнтів
@@ -836,9 +863,7 @@
 
             <div class="stat">
 
-              <h2>
-                95%
-              </h2>
+              <h2>95%</h2>
 
               <p>
                 успішних справ
@@ -852,16 +877,17 @@
 
         <!-- SERVICES -->
 
-        <div class="services-grid">
+        <div class="services-grid" id="services">
 
           <div class="service">
 
             <h2>
-              Бізнес
+              Митне оформлення
             </h2>
 
             <p>
-              🚛 Митне оформлення та міжнародний супровід
+              🚛 Повний юридичний супровід митного оформлення,
+              міжнародних перевезень та імпортно-експортних операцій.
             </p>
 
             <div class="service-number">
@@ -873,11 +899,12 @@
           <div class="service">
 
             <h2>
-              Судові спори
+              Митні спори
             </h2>
 
             <p>
-              📦 Конфіскація товарів • митні спори
+              📦 Захист у справах щодо конфіскації товарів,
+              порушень митних правил та оскарження рішень митниці.
             </p>
 
             <div class="service-number">
@@ -889,11 +916,12 @@
           <div class="service">
 
             <h2>
-              Нерухомість
+              Коригування митної вартості
             </h2>
 
             <p>
-              💰 Коригування ціни розмитнення
+              💰 Оскарження коригування митної вартості,
+              зменшення фінансових ризиків та юридичний супровід.
             </p>
 
             <div class="service-number">
@@ -905,12 +933,12 @@
           <div class="service">
 
             <h2>
-              Сімейне право
+              Міжнародне представництво
             </h2>
 
             <p>
-              🌍 Україна • Європейський Союз
-              📍 Представництво на кордоні Городок –Медика
+              🌍 Представництво інтересів клієнтів
+              в Україні та країнах Європейського Союзу.
             </p>
 
             <div class="service-number">
@@ -923,7 +951,7 @@
 
         <!-- QUOTE -->
 
-        <div class="quote">
+        <div class="quote" id="support">
 
           <h2>
             Ваш результат —
@@ -940,9 +968,9 @@
 
       </section>
 
-      <!-- RIGHT SIDEBAR -->
+      <!-- RIGHT -->
 
-      <aside class="right-panel">
+      <aside class="right-panel" id="contacts">
 
         <div class="contact-card">
 
@@ -956,7 +984,7 @@
               Основний номер
             </span>
 
-            <a href="tel:+380501234567">
+            <a href="tel:+380971000683">
               +38 097 100 0683
             </a>
 
@@ -968,7 +996,7 @@
               Додатковий номер
             </span>
 
-            <a href="tel:+380671234567">
+            <a href="tel:+48537547147">
               +48 537 547 147
             </a>
 
@@ -980,7 +1008,7 @@
               Telegram бот
             </span>
 
-            <a href="https://t.me/example_support_bot" target="_blank">
+            <a href="https://t.me/customs_law_bot" target="_blank">
 
               @customs_law_bot
 
@@ -996,29 +1024,45 @@
             Соцмережі
           </h3>
 
-          <div class="socials">
+          <div class="contact-card">
 
-            <a href="https://instagram.com/" target="_blank">
-              Instagram
-            </a>
+            <h3>
+              Соцмережі
+            </h3>
 
-            <a href="https://facebook.com/" target="_blank">
-              Facebook
-            </a>
+            <div class="socials">
 
-            <a href="https://linkedin.com/" target="_blank">
-              LinkedIn
-            </a>
+              <a href="https://instagram.com/" target="_blank">
 
-            <a href="https://t.me/example_support_bot" target="_blank">
-              Telegram
-            </a>
-            <a href="https://t.me/example_support_bot" target="_blank">
-              TikTok
-            </a>
-            <a href="https://t.me/example_support_bot" target="_blank">
-              WhatsApp
-            </a>
+                Instagram
+
+              </a>
+
+              <a href="https://facebook.com/" target="_blank">
+
+                Facebook
+
+              </a>
+
+              <a href="https://tiktok.com/" target="_blank">
+
+                TikTok
+
+              </a>
+
+              <a href="https://wa.me/48537547147" target="_blank">
+
+                WhatsApp
+
+              </a>
+
+              <a href="https://t.me/customs_law_bot" target="_blank">
+
+                Telegram
+
+              </a>
+
+            </div>
 
           </div>
 
